@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYMPLECTUS | Applied Sciences</title>
+    <style>
+        :root {
+            --bg-color: #050505;
+            --text-color: #e0e0e0;
+            --sub-color: #888888;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; 
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            
+            display: flex;
+            flex-direction: column;
+
+            /* KİLİTLEME KOMUTLARI */
+            pointer-events: none; 
+            user-select: none;    
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            padding: 20px;
+            
+            flex-grow: 1; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center;     
+            margin: 0 auto;          
+            
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* --- LOGO --- */
+        .logo-img {
+            width: 110%;
+            max-width: 2600px;
+            height: auto;
+            margin-bottom: 30px;
+            pointer-events: none; 
+        }
+
+        /* --- SLOGAN --- */
+        .slogan {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            margin-bottom: 40px; /* Altına animasyon gireceği için boşluğu açtık */
+            display: inline-block;
+            width: 100%;
+            max-width: 400px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        /* --- YENİ EKLENEN: İNŞAAT ANİMASYONU --- */
+        .construction-area {
+            margin-bottom: 40px; /* İletişim bilgisiyle ara boşluk */
+            text-align: center;
+            width: 200px; /* Çizginin genişliği */
+            opacity: 0.7;
+        }
+
+        .loader-line {
+            height: 2px;
+            background-color: #222; /* Çizginin yolu (koyu gri) */
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .loader-line::after {
+            content: '';
+            position: absolute;
+            left: -50%;
+            height: 100%;
+            width: 40%;
+            background-color: #ffffff; /* Hareket eden ışık (beyaz) */
+            animation: loading 2s infinite ease-in-out;
+        }
+
+        .status-text {
+            font-family: "Courier New", Courier, monospace; /* Kod fontu */
+            font-size: 0.65rem;
+            color: #666;
+            margin-top: 10px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        /* --- İLETİŞİM --- */
+        .contact {
+            font-size: 0.9rem;
+            color: var(--sub-color);
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .contact a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+            border-bottom: 1px dotted var(--sub-color);
+
+            /* TIKLANABİLİR TEK ALAN */
+            pointer-events: auto; 
+            cursor: pointer;      
+            user-select: text;    
+        }
+
+        .contact a:hover {
+            color: #ffffff;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        footer {
+            padding: 20px;
+            font-size: 0.7rem;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Animasyonlar */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes loading {
+            0% { left: -40%; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <img src="logo.svg" alt="Symplectus Logo" class="logo-img">
+
+        <div class="slogan">
+            "Bridging Theory and Reality"
+        </div>
+
+        <div class="construction-area">
+            <div class="loader-line"></div>
+            <div class="status-text">Website Under Construction</div>
+        </div>
+
+        <div class="contact">
+            <p><a href="mailto:info@symplectus.com">info@symplectus.com</a></p>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2025 Symplectus Ltd
+    </footer>
+
+</body>
+</html>
